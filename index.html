@@ -1,0 +1,1212 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junior Fernandes | DevOps & SRE | AWS Cloud Specialist</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #e74c3c;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --text: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header */
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 180px 0 100px;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero p {
+            font-size: 20px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: var(--light);
+        }
+        
+        .hero .subtitle {
+            color: var(--secondary);
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            font-size: 18px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .btn:hover::after {
+            left: 100%;
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--secondary);
+            margin-left: 15px;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--secondary);
+        }
+        
+        /* Tech Logos Container */
+        .tech-logos-container {
+            margin: 40px 0;
+        }
+        
+        .tech-logos-bg {
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding: 30px;
+    max-width: 90%;
+    margin: 0 auto;
+}
+        
+        .tech-logos {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .tech-logo-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .tech-logo-item img {
+    height: 50px;
+    transition: transform 0.3s;
+}
+        
+        .tech-logo-item span {
+            color: white;
+            font-size: 14px;
+            font-weight: 500;
+            opacity: 0.8;
+        }
+        
+        .tech-logo-item:hover img {
+            transform: scale(1.15);
+        }
+        
+        .tech-logo-item:hover span {
+            opacity: 1;
+        }
+        
+        /* Download CV Button */
+        .download-cv {
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 25px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .download-btn:hover {
+            background-color: #c0392b;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .download-btn i {
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        /* About Section */
+        .section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        .transition-banner {
+            background: linear-gradient(135deg, #3498db 0%, #2c3e50 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .transition-banner h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+        
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .about-img {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        .about-text p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .tech-item {
+            background-color: rgba(255,255,255,0.1);
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .tech-item:hover {
+            background-color: rgba(255,255,255,0.2);
+            transform: translateY(-3px);
+        }
+        
+        .tech-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        .learning-path {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .learning-path h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .path-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .path-item {
+            background-color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: #f5f7fa;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .service-card h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .service-card p {
+            color: var(--text-light);
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .project-img {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .project-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .project-card:hover .project-img img {
+            transform: scale(1.1);
+        }
+        
+        .project-content {
+            padding: 20px;
+        }
+        
+        .project-content h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .project-content p {
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .project-tag {
+            background-color: var(--light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        /* Experience Section */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 50px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 20px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 5px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: var(--secondary);
+            border: 3px solid white;
+        }
+        
+        .timeline-date {
+            font-size: 14px;
+            color: var(--secondary);
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-title {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .timeline-company {
+            font-weight: 600;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+        
+        .timeline-description {
+            color: var(--text-light);
+        }
+        
+        /* Certifications Section */
+        .certifications {
+            background-color: #f5f7fa;
+        }
+        
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .cert-card {
+            background-color: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            position: relative;
+            overflow: hidden;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        .cert-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(52,152,219,0.1) 0%, rgba(44,62,80,0.1) 100%);
+            z-index: 0;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cert-card h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+            color: var(--primary);
+            position: relative;
+            z-index: 1;
+        }
+        
+        .cert-card p {
+            font-size: 14px;
+            color: var(--text-light);
+            position: relative;
+            z-index: 1;
+        }
+        
+        /* Contact Section */
+        .contact-info {
+            background-color: var(--primary);
+            color: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 40px;
+        }
+        
+        .contact-info h3 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 24px;
+            color: white;
+        }
+        
+        .contact-details {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+            color: var(--secondary);
+        }
+        
+        .location-map {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .location-map iframe {
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 100%;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+        
+        .form-control:focus {
+            border-color: var(--secondary);
+            outline: none;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            padding: 0 20px;
+        }
+        
+        .footer-col h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-col p {
+            margin-bottom: 15px;
+            color: #bdc3c7;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #bdc3c7;
+            font-size: 14px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 0 15px;
+            }
+            
+            nav {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 80%;
+                height: calc(100vh - 70px);
+                background-color: var(--primary);
+                transition: all 0.5s ease;
+                padding: 30px;
+            }
+            
+            nav.active {
+                left: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+            }
+            
+            nav ul li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                padding: 150px 0 80px;
+            }
+            
+            .hero h1 {
+                font-size: 36px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .about-content {
+                flex-direction: column;
+            }
+            
+            .section-title h2 {
+                font-size: 30px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                gap: 30px;
+            }
+            
+            .footer-col {
+                padding: 0;
+            }
+            
+            .contact-details {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .tech-logos {
+                gap: 15px;
+            }
+            
+            .tech-logo-item img {
+                height: 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">Junior <span>Fernandes</span></a>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#about">Sobre</a></li>
+                    <li><a href="#services">Habilidades</a></li>
+                    <li><a href="#projects">Projetos</a></li>
+                    <li><a href="#experience">Experiência</a></li>
+                    <li><a href="#certifications">Certificações</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <p class="subtitle">DevOps Engineer(AWS) | SRE | Cloud Solution Arquitect Specialist AWS | Infraestrutura como Código | AWS | Linux</p>
+            <h1>Carlos Reynaldo Fernandes JUNIOR</h1>
+            <p>Profissional com 25+ anos em infraestrutura e cybersecurity, migrando para Cloud Computing/DevOps/SRE com especialização em AWS, Terraform, Kubernetes e pipelines CI/CD.</p>
+            
+            <div class="download-cv">
+                <a href="CV-JuniorFernandes-032025.pdf" class="download-btn" download>
+                    <i class="fas fa-file-pdf"></i> Baixar Currículo (PDF)
+                </a>
+            </div>
+            
+            <div class="hero-buttons">
+                <a href="#contact" class="btn">Contato</a>
+                <a href="https://linkedin.com/in/junior-fernandes65" class="btn btn-outline" target="_blank">LinkedIn</a>
+                <a href="https://github.com/crfjunior65" class="btn btn-outline" target="_blank" style="margin-left: 15px;">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+            
+            <!-- Logos das Tecnologias Melhoradas -->
+            <div class="tech-logos-container">
+                <div class="tech-logos-bg">
+                    <div class="tech-logos">
+        <div class="tech-logo-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" alt="AWS">
+            <span>AWS</span>
+        </div>
+        <div class="tech-logo-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Terraform_Logo.svg" alt="Terraform">
+            <span>Terraform</span>
+        </div>
+        <div class="tech-logo-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/6/67/Kubernetes_logo.svg" alt="Kubernetes">
+            <span>Kubernetes</span>
+        </div>
+        <div class="tech-logo-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Docker_%28container_engine%29_logo.svg" alt="Docker">
+            <span>Docker</span>
+        </div>
+        <div class="tech-logo-item">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/9/91/Octicons-mark-github.svg" alt="GitHub">
+            <span>GitHub</span>
+        </div>
+    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Sobre Mim</h2>
+            </div>
+            
+            <div class="transition-banner">
+                <h3>Em Transição para DevOps/SRE</h3>
+                <p>Após 25 anos liderando equipes de infraestrutura e segurança, estou me dedicando integralmente à migração para Cloud Computing/DevOps/SRE, com foco em cloud AWS, infraestrutura como código e automação de processos, Agilização de Processos e Inteligência Artificial.</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-img">
+                    <img src="https://via.placeholder.com/500x600" alt="Carlos Reynaldo Fernandes JUNIOR">
+                </div>
+                <div class="about-text">
+                    <h3>Infraestrutura → Cloud Computing/DevOps/SRE</h3>
+                    <p>Profissional sênior em transição de carreira, combinando vasta experiência em infraestrutura on-premise com conhecimentos modernos em cloud computing e automação.</p>
+                    <p>Nos últimos 3 anos completei mais de 30 cursos e certificações em tecnologias DevOps e Cloud, incluindo formação completa em AWS, Terraform, Kubernetes e pipelines CI/CD.</p>
+                    
+                    <div class="learning-path">
+                        <h3>Foco Atual de Estudos</h3>
+                        <div class="path-items">
+                            <span class="path-item">AWS Certified Solutions Architect</span>
+                            <span class="path-item">Terraform Avançado</span>
+                            <span class="path-item">Kubernetes Administration</span>
+                            <span class="path-item">GitHub Actions</span>
+                            <span class="path-item">Docker Deep Dive</span>
+                            <span class="path-item">Prometheus/Grafana</span>
+                            <span class="path-item">CI/CD Pipelines</span>
+                            <span class="path-item">Python for DevOps</span>
+                        </div>
+                    </div>
+                    
+                    <div class="tech-grid">
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div>AWS Cloud</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div>Terraform</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fab fa-docker"></i>
+                            </div>
+                            <div>Docker</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-cubes"></i>
+                            </div>
+                            <div>Kubernetes</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div>GitHub Actions</div>
+                        </div>
+                        <div class="tech-item">
+                            <div class="tech-icon">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <div>CI/CD</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Habilidades Cloud Computing/DevOps/SRE</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3>Arquitetura AWS</h3>
+                    <p>Design e implementação de soluções na AWS incluindo EC2, ECS Fargate, VPC, S3, RDS, Lambda e serviços gerenciados.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Infra as Code</h3>
+                    <p>Automação de infraestrutura com Terraform, criação de módulos reutilizáveis e gestão de estados para ambientes multi-cloud.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fab fa-docker"></i>
+                    </div>
+                    <h3>Containerização</h3>
+                    <p>Criação e orquestração de containers com Docker e Kubernetes (EKS, GKE), incluindo deployments, services e configmaps.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-random"></i>
+                    </div>
+                    <h3>CI/CD Pipelines</h3>
+                    <p>Implementação de pipelines de entrega contínua com GitHub Actions, integração com AWS ECS e EC2.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Observabilidade</h3>
+                    <p>Configuração de monitoramento com Prometheus, Grafana e CloudWatch, criação de dashboards e alertas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>DevSecOps</h3>
+                    <p>Integração de segurança no pipeline CI/CD, análise estática de código e gestão de secrets com AWS Secrets Manager.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="section" id="projects">
+        <div class="container">
+            <div class="section-title">
+                <h2>Projetos DevOps</h2>
+            </div>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Projeto AWS">
+                    </div>
+                    <div class="project-content">
+                        <h3>Infraestrutura como Código</h3>
+                        <p>Projetos no GitHub demonstrando provisionamento de infraestrutura AWS completa usando Terraform.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Terraform</span>
+                            <span class="project-tag">AWS</span>
+                            <span class="project-tag">IaC</span>
+                        </div>
+                        <a href="https://github.com/crfjunior65" target="_blank" class="btn">Ver no GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1624953587687-daf255b6b80a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Projeto Kubernetes">
+                    </div>
+                    <div class="project-content">
+                        <h3>Kubernetes Cluster</h3>
+                        <p>Configuração de cluster EKS com auto-scaling, ingress controller e deploy de aplicações containerizadas.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">Kubernetes</span>
+                            <span class="project-tag">AWS EKS</span>
+                            <span class="project-tag">Docker</span>
+                        </div>
+                        <a href="https://github.com/crfjunior65" target="_blank" class="btn">Ver no GitHub</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <img src="https://images.unsplash.com/photo-1551033406-611cf9a28f67?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Projeto CI/CD">
+                    </div>
+                    <div class="project-content">
+                        <h3>Pipeline CI/CD</h3>
+                        <p>Implementação de pipeline completo com GitHub Actions para build, test e deploy automático na AWS.</p>
+                        <div class="project-tags">
+                            <span class="project-tag">GitHub Actions</span>
+                            <span class="project-tag">CI/CD</span>
+                            <span class="project-tag">AWS</span>
+                        </div>
+                        <a href="https://github.com/crfjunior65" target="_blank" class="btn">Ver no GitHub</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="section" id="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Experiência Profissional</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-date">08/2006 - 04/2024</div>
+                    <h3 class="timeline-title">Analista de TI e Segurança</h3>
+                    <p class="timeline-company">SANESUL - Empresa de Grande Porte no segmento de Água e Esgoto Estadual</p>
+                    <p class="timeline-description">
+                        • Administração da infraestrutura de TI<br>
+                        • Responsável pela cybersecurity e gestão de firewalls UTM (FortiGate/BlockBit)<br>
+                        • Monitoramento de redes e sistemas com Zabbix e Grafana<br>
+                        • Administração de rede e servidores Linux/Windows<br>
+                        • Coordenação da equipe de segurança e monitoramento da rede de dados
+                    </p>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-date">2003 - 2006</div>
+                    <h3 class="timeline-title">Analista de Redes e Telecomunicação</h3>
+                    <p class="timeline-company">Dicorel - Empresa de Pequeno Porte no segmento de Governo Estadual</p>
+                    <p class="timeline-description">
+                        • Desenvolvimento de projetos de redes<br>
+                        • Suporte a configuração de switches,roteadores e servidores<br>
+                        • Supervisão das redes de dados da SEJUSP (Secretaria de Justiça e Segurança Pública do Estado MS)
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section class="section certifications" id="certifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Certificações Recentes</h2>
+            </div>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <h3>Pós-Graduação em Cloud Computing AWS</h3>
+                    <p>Faculdade FaCiencia - 2024</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Especialização em Cloud Computing AWS</h3>
+                    <p>Cloud Treinamentos - 2023</p>
+                </div>
+                <div class="cert-card">
+                    <h3>NSE 2 Network Security Associate</h3>
+                    <p>Fortinet - 2022</p>
+                </div>
+                <div class="cert-card">
+                    <h3>NSE 1 Fortinet</h3>
+                    <p>Fortinet - 2022</p>
+                </div>
+                <div class="cert-card">
+                    <h3>UTM NGFW BlockBit Plataforma 2.2</h3>
+                    <p>2022</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Formação DevOps Cloud</h3>
+                    <p>2025</p>
+                </div>
+                <div class="cert-card">
+                    <h3>Terraform para todos os níveis utilizando AWS</h3>
+                    <p>Curso Completo</p>
+                </div>
+                <div class="cert-card">
+                    <h3>AWS ECS Fargate com Terraform</h3>
+                    <p>Curso Prático e Completo</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Localização e Contato</h2>
+            </div>
+            
+             <div class="contact-info">
+                <h3>Entre em Contato</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Localização</h4>
+                            <p>Parque Santo Antonio, Taubaté - SP</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(12) 98885-2930</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>junior@netms.com.br</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.324692514634!2d-45.5676889246864!3d-23.45403447890277!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd5a4f4235533b%3A0x4e142b9d6f5c4b8a!2sParque%20Santo%20Ant%C3%B4nio%2C%20Taubat%C3%A9%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1718300000000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- [Manter o footer anterior] -->
+
+    <script>
+        // [Manter os scripts anteriores]
+    </script>
+</body>
+</html>
