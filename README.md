@@ -9,7 +9,9 @@ DevOps Engineer(AWS) | SRE | Cloud Solution Arquitect Specialist AWS | Infraestr
 
 Profissional com 25+ anos em infraestrutura e cybersecurity, migrando para Cloud Computing/DevOps/SRE com especialização em AWS, Terraform, Kubernetes, Inteligencia Artificial e pipelines CI/CD.
 
-- Contato LinkedIn(https://www.linkedin.com/in/junior-fernandes65/) 
+- Contato 
+    - LinkedIn(https://www.linkedin.com/in/junior-fernandes65/) 
+    - GitHub Versel(https://portifolio-zeta-peach-59.vercel.app/#)
 
 Infraestrutura → Cloud Computing/DevOps/SRE
 
