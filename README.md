@@ -11,10 +11,13 @@ Profissional com 25+ anos em infraestrutura e cybersecurity, migrando para Cloud
 
 - Contato LinkedIn(https://www.linkedin.com/in/junior-fernandes65/) 
 
-AWS
-Terraform
-Kubernetes
-Docker
-GitHub
-Inteligencia Artificial
+Infraestrutura → Cloud Computing/DevOps/SRE
+
+Profissional sênior em transição de carreira, combinando vasta experiência em infraestrutura on-premise com conhecimentos modernos em cloud computing e automação.
+
+Nos últimos 3 anos completei mais de 30 cursos e certificações em tecnologias DevOps e Cloud, incluindo formação completa em AWS, Terraform, Kubernetes e pipelines CI/CD.
+
+AWS | Terraform | Kubernetes | Docker | GitHub | Inteligencia Artificial
+
+
 
