@@ -34,6 +34,7 @@ AWS | Terraform | Kubernetes | Docker | GitHub | Inteligencia Artificial
 [![Terraform](https://img.shields.io/badge/Terraform-7B42BC?style=for-the-badge&logo=terraform&logoColor=white)](https://www.terraform.io/)
 [![AWS](https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)](https://aws.amazon.com/)
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+[![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.linux.org/)
 
 [🔗 Acesse o site online](https://app.junior.tec.br)  
 [📄 Baixe o currículo (PDF)](CV-JuniorFernandes.pdf)  
