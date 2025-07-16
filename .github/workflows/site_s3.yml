@@ -22,4 +22,6 @@ jobs:
 
       - name: Deploy arquivos para S3
         run: |
-          aws s3 sync . s3://app.junior.tec.br --delete --exclude ".git/*" --exclude ".github/*" --acl public-read
+          aws s3 cp CV-JuniorFernandes.pdf s3://app.junior.tec.br/
+          aws s3 cp index.html s3://app.junior.tec.br/
+          #aws s3 sync . s3://app.junior.tec.br --delete --exclude ".git/*" --exclude ".github/*" --acl public-read
