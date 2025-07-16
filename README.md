@@ -36,6 +36,14 @@ AWS | Terraform | Kubernetes | Docker | GitHub | Inteligencia Artificial
 [![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
 [![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)](https://www.linux.org/)
 
+[![Ansible](https://img.shields.io/badge/Ansible-EE0000?style=for-the-badge&logo=ansible&logoColor=white)](https://www.ansible.com/)
+[![Jenkins](https://img.shields.io/badge/Jenkins-D24939?style=for-the-badge&logo=jenkins&logoColor=white)](https://www.jenkins.io/)
+[![Prometheus](https://img.shields.io/badge/Prometheus-E6522C?style=for-the-badge&logo=prometheus&logoColor=white)](https://prometheus.io/)
+[![Grafana](https://img.shields.io/badge/Grafana-F46800?style=for-the-badge&logo=grafana&logoColor=white)](https://grafana.com/)
+
+DevOps | SRE | Cloud Solution Arquitect Specialist AWS | Infraestrutura como Código | AWS | Linux
+
+
 [🔗 Acesse o site online](https://app.junior.tec.br)  
 [📄 Baixe o currículo (PDF)](CV-JuniorFernandes.pdf)  
 [💼 LinkedIn](https://linkedin.com/in/junior-fernandes65) • [📂 GitHub](https://github.com/crfjunior65)
