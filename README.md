@@ -21,5 +21,58 @@ Nos últimos 3 anos completei mais de 30 cursos e certificações em tecnologias
 
 AWS | Terraform | Kubernetes | Docker | GitHub | Inteligencia Artificial
 
+---
 
+# 🚀 Portfólio Profissional | Junior Fernandes
+
+[🔗 Acesse o site online](https://app.junior.tec.br)  
+[📄 Baixe o currículo (PDF)](CV-JuniorFernandes.pdf)  
+[💼 LinkedIn](https://linkedin.com/in/junior-fernandes65) • [📂 GitHub](https://github.com/crfjunior65)
+
+---
+
+## 👨‍💻 Sobre o Projeto
+
+Este portfólio foi desenvolvido com foco na apresentação profissional da minha transição de carreira de Infraestrutura para **DevOps/SRE com especialização em AWS**, utilizando práticas modernas de automação, infraestrutura como código e CI/CD.
+
+Construído em **HTML5 + CSS3 puro**, com design responsivo e foco em performance, o portfólio destaca:
+
+- 🌐 Minha trajetória profissional e conquistas
+- 📊 Habilidades técnicas com AWS, Terraform, Docker, Kubernetes e GitHub Actions
+- 🔧 Projetos reais de Infraestrutura como Código e CI/CD
+- 📜 Certificações e formação acadêmica
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- HTML5
+- CSS3 com Flexbox e Grid Layout
+- Font Awesome (ícones)
+- GitHub Actions (pipeline de deploy)
+- AWS S3 (hospedagem estática)
+- Git + GitHub
+
+---
+
+## 🔄 Deploy Automatizado
+
+Este portfólio é publicado automaticamente em um bucket S3 sempre que há push na branch `main`, utilizando o GitHub Actions:
+
+```yaml
+on:
+  push:
+    branches: [main]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+      - run: aws s3 sync . s3://meu-site-s3 --delete --exclude ".git/*" --exclude ".github/*" --acl public-read
 
