@@ -23,7 +23,7 @@ AWS | Terraform | Kubernetes | Docker | GitHub | Inteligencia Artificial
 
 ---
 
-# 🚀Portfólio Profissional | Junior Fernandes
+## 🚀Portfólio Profissional | Junior Fernandes
 
 [🔗 Acesse o site online](https://app.junior.tec.br)  
 [📄 Baixe o currículo (PDF)](CV-JuniorFernandes.pdf)  
